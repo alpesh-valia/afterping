@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AfterPing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header .last-updated {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #667eea;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        ul ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .summary-box h2 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .summary-box li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .summary-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+        }
+
+        .summary-box strong {
+            color: white;
+        }
+
+        .summary-box p {
+            font-size: 1.1em;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-info li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .contact-info li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated"><strong>Last Updated:</strong> December 2024</p>
+        <a href="index.html" class="nav-link">← Back to Home</a>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>
+                    This Privacy Policy explains how your information is collected, used, stored, and protected when you use the AfterPing mobile application (the "App").
+                </p>
+            </section>
+
+            <section id="data-collection">
+                <h2>Data Collection and Storage</h2>
+                
+                <h3>What Is Collected</h3>
+                <p>AfterPing collects and stores the following information <strong>on your phone only</strong>:</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Notification Data:</strong></p>
+                    <ul>
+                        <li>Notification titles, text content, and metadata</li>
+                        <li>App package names and notification icons</li>
+                        <li>Timestamps of notifications</li>
+                        <li>Notification channel information</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>App Information:</strong></p>
+                    <ul>
+                        <li>Installed app names and package identifiers</li>
+                        <li>App icons and metadata</li>
+                        <li>Notification statistics per app</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>User Preferences:</strong></p>
+                    <ul>
+                        <li>Favorite notifications</li>
+                        <li>Archived notifications</li>
+                        <li>Reminder settings</li>
+                        <li>App organization preferences (tags, pinning, etc.)</li>
+                    </ul>
+                </div>
+
+                <h3>What Is NOT Collected</h3>
+                <ul>
+                    <li><strong>Personal Information:</strong> AfterPing does not collect names, email addresses, phone numbers, or any other personally identifiable information (PII)</li>
+                    <li><strong>Location Data:</strong> AfterPing does not collect GPS coordinates or location information</li>
+                    <li><strong>Device Identifiers:</strong> AfterPing does not collect device IDs, IMEI, or advertising IDs</li>
+                    <li><strong>Network Data:</strong> AfterPing does not collect IP addresses, MAC addresses, or network information</li>
+                    <li><strong>Usage Analytics:</strong> AfterPing does not track your usage patterns or app interactions</li>
+                    <li><strong>Third-Party Data:</strong> AfterPing does not collect data from third-party services or social media accounts</li>
+                </ul>
+            </section>
+
+            <section id="data-storage">
+                <h2>Data Storage</h2>
+                
+                <h3>Local Storage Only</h3>
+                <p><strong>All data collected by AfterPing is stored exclusively on your phone.</strong> AfterPing does not:</p>
+                <ul>
+                    <li>Transmit any data to remote servers</li>
+                    <li>Sync data to cloud services</li>
+                    <li>Share data with third parties</li>
+                    <li>Store data in external databases</li>
+                    <li>Use analytics or tracking services</li>
+                </ul>
+
+                <h3>Data Storage on Your Device</h3>
+                <ul>
+                    <li>All notification history and app data is encrypted and stored in your phone's internal storage</li>
+                    <li>Data is encrypted to protect your privacy and secured using your device's built-in security features</li>
+                    <li>You have full control over your data and can delete it at any time through the App</li>
+                </ul>
+            </section>
+
+            <section id="data-usage">
+                <h2>Data Usage</h2>
+                
+                <h3>How Your Data Is Used</h3>
+                <p>The collected data is used <strong>only</strong> to provide the core functionality of the App:</p>
+                <ul>
+                    <li><strong>Notification History:</strong> Display and organize your notification history</li>
+                    <li><strong>Search Functionality:</strong> Enable searching through past notifications</li>
+                    <li><strong>Reminders:</strong> Create and manage reminders based on notifications</li>
+                    <li><strong>Organization:</strong> Allow you to organize notifications by apps, tags, favorites, etc.</li>
+                    <li><strong>Statistics:</strong> Provide insights about your notification patterns</li>
+                </ul>
+
+                <h3>Permissions Required</h3>
+                <p>AfterPing requires the following permissions to function:</p>
+                <ul>
+                    <li><strong>Notification Access:</strong> To capture and store notifications</li>
+                    <li><strong>Post Notifications:</strong> To display reminder notifications (Android 13+)</li>
+                    <li><strong>Exact Alarm:</strong> To schedule precise reminder alarms (Android 12+)</li>
+                    <li><strong>Battery Optimization Exemption:</strong> To ensure reminders work reliably</li>
+                </ul>
+                <p>All permissions are used <strong>solely</strong> for the App's core functionality and are not used for any other purpose.</p>
+            </section>
+
+            <section id="data-security">
+                <h2>Data Security</h2>
+                
+                <h3>Security Measures</h3>
+                <ul>
+                    <li><strong>Phone Storage Only:</strong> All data is stored on your phone, reducing the risk of external breaches</li>
+                    <li><strong>No Internet Transmission:</strong> Since we don't send data over the internet, there's no risk of interception during transmission</li>
+                    <li><strong>Device Security:</strong> We rely on your device's built-in security features for data protection</li>
+                    <li><strong>No Remote Servers:</strong> We have no servers or cloud storage that could be compromised</li>
+                </ul>
+
+                <h3>Your Responsibility</h3>
+                <ul>
+                    <li>You are responsible for maintaining the security of your phone</li>
+                    <li>It is recommended to enable phone encryption and screen locks</li>
+                    <li>Uninstalling the App will delete all stored data</li>
+                </ul>
+            </section>
+
+            <section id="data-deletion">
+                <h2>Data Deletion</h2>
+                
+                <h3>Your Rights</h3>
+                <p>You have complete control over your data:</p>
+                <ul>
+                    <li><strong>Delete Individual Items:</strong> Delete specific notifications or apps at any time</li>
+                    <li><strong>Bulk Deletion:</strong> Delete multiple items using selection mode</li>
+                    <li><strong>Archive:</strong> Archive notifications to remove them from the main view</li>
+                    <li><strong>Uninstall:</strong> Uninstalling the App permanently deletes all stored data</li>
+                </ul>
+
+                <h3>How to Delete Data</h3>
+                <ol>
+                    <li>Open the App</li>
+                    <li>Select the items you want to delete</li>
+                    <li>Use the delete action, or</li>
+                    <li>Uninstall the App to delete all data</li>
+                </ol>
+            </section>
+
+            <section id="third-party">
+                <h2>Third-Party Services</h2>
+                
+                <h3>AdMob</h3>
+                <p>AfterPing uses Google AdMob to display advertisements. AdMob may collect:</p>
+                <ul>
+                    <li><strong>Device Information:</strong> Device type, OS version, language</li>
+                    <li><strong>Advertising ID:</strong> Android Advertising ID (can be reset in device settings)</li>
+                    <li><strong>Location:</strong> General location based on IP address (approximate)</li>
+                </ul>
+                <p><strong>We do not share your notification data with AdMob.</strong> AdMob's data collection is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+                <p>You can opt-out of personalized ads in your device settings:</p>
+                <ul>
+                    <li><strong>Android:</strong> Settings → Google → Ads → Reset advertising ID / Opt out of Ads Personalization</li>
+                </ul>
+            </section>
+
+            <section id="children-privacy">
+                <h2>Children's Privacy</h2>
+                <p>
+                    AfterPing is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately.
+                </p>
+            </section>
+
+            <section id="changes">
+                <h2>Changes to This Privacy Policy</h2>
+                <p>This Privacy Policy may be updated from time to time. You will be notified of any changes by:</p>
+                <ul>
+                    <li>Updating the "Last Updated" date at the top of this policy</li>
+                    <li>Posting the updated policy in the App's GitHub repository</li>
+                    <li>For significant changes, additional notice may be provided through the app</li>
+                </ul>
+                <p>Your continued use of the App after changes are posted constitutes acceptance of the updated policy.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or data practices, please contact:</p>
+                <div class="contact-info">
+                    <ul>
+                        <li><strong>GitHub Issues:</strong> <a href="https://github.com/alpesh-valia/notification-history/issues" target="_blank">github.com/alpesh-valia/notification-history/issues</a></li>
+                        <li><strong>GitHub Repository:</strong> <a href="https://github.com/alpesh-valia/notification-history" target="_blank">github.com/alpesh-valia/notification-history</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="compliance">
+                <h2>Compliance</h2>
+                <p>This Privacy Policy complies with:</p>
+                <ul>
+                    <li><strong>GDPR</strong> (General Data Protection Regulation) - European Union</li>
+                    <li><strong>CCPA</strong> (California Consumer Privacy Act) - California, USA</li>
+                    <li><strong>COPPA</strong> (Children's Online Privacy Protection Act) - United States</li>
+                    <li><strong>PIPEDA</strong> (Personal Information Protection and Electronic Documents Act) - Canada</li>
+                </ul>
+            </section>
+
+            <section id="summary">
+                <div class="summary-box">
+                    <h2>Summary</h2>
+                    <p><strong>Key Points:</strong></p>
+                    <ul>
+                        <li><strong>No Data Collection:</strong> AfterPing doesn't collect personal information</li>
+                        <li><strong>Phone Storage Only:</strong> All data stays on your phone</li>
+                        <li><strong>No Data Transmission:</strong> AfterPing doesn't send data anywhere</li>
+                        <li><strong>No Tracking:</strong> AfterPing doesn't track your usage or behavior</li>
+                        <li><strong>Full Control:</strong> You can delete all data at any time</li>
+                        <li><strong>Open Source:</strong> The code is open source and auditable</li>
+                    </ul>
+                    <p><strong>AfterPing respects your privacy. Your data belongs to you, and it stays with you.</strong></p>
+                </div>
+            </section>
+
+            <hr>
+
+            <p class="footer-note">
+                <em>This Privacy Policy is effective as of the date listed above and applies to all versions of AfterPing.</em>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AfterPing. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="index.html">Home</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="https://github.com/alpesh-valia/notification-history">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
+

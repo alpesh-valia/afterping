@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfterPing - Notification History Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+            border-radius: 15px;
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2em;
+            border: 3px dashed #999;
+            min-height: 400px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .highlight li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .download-section h2 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AfterPing</h1>
+        <p>Your Complete Notification History Manager</p>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <section id="about">
+                <h2>About AfterPing</h2>
+                <p>
+                    AfterPing is a powerful Android application designed to help you manage and organize your notification history. 
+                    Never lose important notifications again! AfterPing captures, stores, and organizes all your notifications locally 
+                    on your device, giving you complete control over your notification data.
+                </p>
+                <p>
+                    With AfterPing, you can search through past notifications, create reminders, organize by apps, and gain insights 
+                    into your notification patterns—all while keeping your data private and secure on your device.
+                </p>
+            </section>
+
+            <section id="features">
+                <h2>Key Features</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>📱 Notification History</h3>
+                        <ul>
+                            <li>Complete notification history</li>
+                            <li>View titles, content, and metadata</li>
+                            <li>App icons and package information</li>
+                            <li>Timestamp tracking</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🔍 Search & Find</h3>
+                        <ul>
+                            <li>Powerful search functionality</li>
+                            <li>Search through all notifications</li>
+                            <li>Filter by app</li>
+                            <li>Quick access to past notifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>⏰ Reminders</h3>
+                        <ul>
+                            <li>Create reminders from notifications</li>
+                            <li>Schedule exact alarms</li>
+                            <li>Never miss important items</li>
+                            <li>Customizable reminder settings</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📊 Organization</h3>
+                        <ul>
+                            <li>Organize by apps</li>
+                            <li>Tag and categorize notifications</li>
+                            <li>Favorites and archived items</li>
+                            <li>Pin important notifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📈 Statistics</h3>
+                        <ul>
+                            <li>Notification patterns insights</li>
+                            <li>App-wise statistics</li>
+                            <li>Notification frequency analysis</li>
+                            <li>Usage trends and patterns</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🔒 Privacy First</h3>
+                        <ul>
+                            <li>All data stored locally</li>
+                            <li>No data transmission</li>
+                            <li>No tracking or analytics</li>
+                            <li>Complete user control</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="privacy">
+                <div class="highlight">
+                    <h3>Privacy & Security</h3>
+                    <p>AfterPing is designed with your privacy as the top priority:</p>
+                    <ul>
+                        <li><strong>Local Storage Only:</strong> All your data is stored exclusively on your device</li>
+                        <li><strong>No Data Transmission:</strong> We don't send any data to remote servers</li>
+                        <li><strong>No Personal Information:</strong> We don't collect names, emails, or any PII</li>
+                        <li><strong>No Tracking:</strong> We don't track your usage patterns or behavior</li>
+                        <li><strong>Full Control:</strong> You can delete all data at any time</li>
+                        <li><strong>Open Source:</strong> The code is open source and auditable</li>
+                    </ul>
+                    <p style="margin-top: 20px;">
+                        <a href="privacy-policy.html" style="color: white; text-decoration: underline; font-weight: bold;">
+                            Read our complete Privacy Policy →
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <section id="screenshots">
+                <h2>App Screenshots</h2>
+                <p>Take a look at AfterPing in action:</p>
+                <div class="screenshots">
+                    <div class="screenshot-placeholder">
+                        📱 Screenshot 1<br>
+                        <small>Main Notification History View</small>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        📱 Screenshot 2<br>
+                        <small>Search & Filter Interface</small>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        📱 Screenshot 3<br>
+                        <small>Reminder Creation</small>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        📱 Screenshot 4<br>
+                        <small>Statistics & Insights</small>
+                    </div>
+                </div>
+            </section>
+
+            <section id="download">
+                <div class="download-section">
+                    <h2>Download AfterPing</h2>
+                    <p style="font-size: 1.2em; margin: 20px 0;">
+                        Get AfterPing from the Google Play Store or GitHub
+                    </p>
+                    <a href="#" class="download-btn">Download on Google Play</a>
+                    <p style="margin-top: 20px; opacity: 0.9;">
+                        <a href="https://github.com/alpesh-valia/notification-history" style="color: white; text-decoration: underline;">
+                            View on GitHub →
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions, suggestions, or need support? We'd love to hear from you!</p>
+                    <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0;">📧</span>
+                            <strong>GitHub Issues:</strong> 
+                            <a href="https://github.com/alpesh-valia/notification-history/issues" target="_blank">
+                                Submit an issue or feature request
+                            </a>
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0;">💻</span>
+                            <strong>GitHub Repository:</strong> 
+                            <a href="https://github.com/alpesh-valia/notification-history" target="_blank">
+                                github.com/alpesh-valia/notification-history
+                            </a>
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0;">📄</span>
+                            <strong>Privacy Policy:</strong> 
+                            <a href="privacy-policy.html">View Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AfterPing. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="https://github.com/alpesh-valia/notification-history">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
+
